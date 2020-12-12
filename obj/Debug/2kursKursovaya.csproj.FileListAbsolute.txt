@@ -1,0 +1,9 @@
+C:\Users\gorbe\source\repos\2kursKursovaya\2kursKursovaya\bin\Debug\2kursKursovaya.exe.config
+C:\Users\gorbe\source\repos\2kursKursovaya\2kursKursovaya\bin\Debug\2kursKursovaya.exe
+C:\Users\gorbe\source\repos\2kursKursovaya\2kursKursovaya\bin\Debug\2kursKursovaya.pdb
+C:\Users\gorbe\source\repos\2kursKursovaya\2kursKursovaya\obj\Debug\2kursKursovaya.csprojAssemblyReference.cache
+C:\Users\gorbe\source\repos\2kursKursovaya\2kursKursovaya\obj\Debug\_2kursKursovaya.Form1.resources
+C:\Users\gorbe\source\repos\2kursKursovaya\2kursKursovaya\obj\Debug\_2kursKursovaya.Properties.Resources.resources
+C:\Users\gorbe\source\repos\2kursKursovaya\2kursKursovaya\obj\Debug\2kursKursovaya.csproj.GenerateResource.cache
+C:\Users\gorbe\source\repos\2kursKursovaya\2kursKursovaya\obj\Debug\2kursKursovaya.exe
+C:\Users\gorbe\source\repos\2kursKursovaya\2kursKursovaya\obj\Debug\2kursKursovaya.pdb
