@@ -9,6 +9,7 @@ namespace _2kursKursovaya
 {
     public class Particle
     {
+        public static Color ColorCh = Color.Magenta;
         public int Radius; // радиус частицы
         public float X; // X координата положения частицы в пространстве
         public float Y; // Y координата положения частицы в пространстве
@@ -48,7 +49,6 @@ namespace _2kursKursovaya
             b.Dispose();
         }
     }
-
     public class ParticleColorful : Particle
     {
         // два новых поля под цвет начальный и конечный
@@ -72,7 +72,7 @@ namespace _2kursKursovaya
             float k = Math.Min(1f, Life / 100);
 
             // так как k уменьшается от 1 до 0, то порядок цветов обратный
-            var color = MixColor(ToColor, FromColor, k);
+            var color = MixColor(ToColor, ColorCh, k);
             var b = new SolidBrush(color);
 
             g.FillEllipse(b, X - Radius, Y - Radius, Radius * 2, Radius * 2);

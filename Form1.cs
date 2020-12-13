@@ -127,7 +127,7 @@ namespace _2kursKursovaya
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) //счётчик
         {
             if (comboBox1.SelectedIndex == 1)
             {
@@ -161,6 +161,32 @@ namespace _2kursKursovaya
                     {
                         points.ColorS = Color.Purple;
                     }
+                    break;
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) //частички
+        {
+            Particle.ColorCh = Color.Blue;
+            switch (comboBox2.SelectedIndex)
+            {
+                case 0: //красный
+                    Particle.ColorCh = Color.Red;
+                    break;
+                case 1: //синий
+                    Particle.ColorCh = Color.Blue;
+                    break;
+                case 2: //зелёный
+                    Particle.ColorCh = Color.Green;
+                    break;
+                case 3: //фиолетовый
+                    Particle.ColorCh = Color.Purple;
+                    break;
+                case 4: //розовый
+                    Particle.ColorCh = Color.Magenta;
+                    break;
+                case 5: //белый
+                    Particle.ColorCh = Color.White;
                     break;
             }
         }

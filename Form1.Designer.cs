@@ -36,6 +36,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).BeginInit();
             this.SuspendLayout();
@@ -90,7 +92,7 @@
             "Синий",
             "Зелёный",
             "Фиолетовый"});
-            this.comboBox1.Location = new System.Drawing.Point(573, 444);
+            this.comboBox1.Location = new System.Drawing.Point(576, 464);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(179, 24);
             this.comboBox1.TabIndex = 10;
@@ -99,17 +101,45 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(611, 483);
+            this.label1.Location = new System.Drawing.Point(613, 441);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 17);
             this.label1.TabIndex = 11;
             this.label1.Text = "Цвет счётчика";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Красный",
+            "Синий",
+            "Зелёный",
+            "Фиолетовый",
+            "Розовый",
+            "Белый"});
+            this.comboBox2.Location = new System.Drawing.Point(368, 464);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(179, 24);
+            this.comboBox2.TabIndex = 12;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(413, 441);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 17);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Цвет частичек";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 573);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
@@ -134,6 +164,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label2;
     }
 }
 
