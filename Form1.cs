@@ -28,10 +28,12 @@ namespace _2kursKursovaya
             // расширенное окно для выбора цвета
             colorDialog1.FullOpen = true;
             colorDialog2.FullOpen = true;
+            colorDialog3.FullOpen = true;
             colorDialog2.Color = Color.Red;
             // установка начального цвета для colorDialog
             button1.BackColor = Color.Magenta;
             button2.BackColor = Color.Red;
+            button3.BackColor = Color.Black;
 
             this.emitter = new Emitter // создаю эмиттер и привязываю его к полю emitter
             {
@@ -120,7 +122,7 @@ namespace _2kursKursovaya
         }
 
 
-        private void button1_Click(object sender, EventArgs e) //цвет частичек
+        private void button1_Click(object sender, EventArgs e) //цвет частичек из
         {
             if (colorDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
@@ -145,6 +147,15 @@ namespace _2kursKursovaya
         private void tbSize_Scroll(object sender, EventArgs e)
         {
             Emitter.Rad = tbSize.Value;
+        }
+
+        private void button3_Click(object sender, EventArgs e) //цвет частичек в
+        {
+            if (colorDialog3.ShowDialog() == DialogResult.Cancel)
+                return;
+            // установка цвета частиц
+            Particle.ColorCh2 = colorDialog3.Color;
+            button3.BackColor = colorDialog3.Color;
         }
     }
 }
