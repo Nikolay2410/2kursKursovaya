@@ -212,9 +212,9 @@
             this.label7.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(332, 450);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 23);
+            this.label7.Size = new System.Drawing.Size(161, 23);
             this.label7.TabIndex = 26;
-            this.label7.Text = "Размер частиц";
+            this.label7.Text = "Количество частиц";
             // 
             // Form1
             // 

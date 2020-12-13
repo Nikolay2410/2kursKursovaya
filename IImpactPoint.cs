@@ -64,7 +64,6 @@ namespace _2kursKursovaya
 
     public class GravityPoint : IImpactPoint
     {
-        public int Power = 100; // сила притяжения
         int count = 0; // количество точек
         int c = 0;
         public override void ImpactParticle(Particle particle)
@@ -119,7 +118,6 @@ namespace _2kursKursovaya
 
     public class GravityPointMouse : IImpactPoint
     {
-        public int Power = 100; // сила притяжения
         int count = 0; // количество точек
         public override void ImpactParticle(Particle particle)
         {

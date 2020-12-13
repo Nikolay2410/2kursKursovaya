@@ -89,7 +89,6 @@ namespace _2kursKursovaya
 
         private void tbGraviton2_Scroll(object sender, EventArgs e)
         {
-            point2.Power = tbGraviton2.Value;
             point2.Gravitation = tbGraviton2.Value;
         }
 
@@ -150,11 +149,10 @@ namespace _2kursKursovaya
             Emitter.Rad = tbSize.Value;
         }
 
-        private void button3_Click(object sender, EventArgs e) //цвет частичек в*
+        private void button3_Click(object sender, EventArgs e) //цвет частичек
         {
             if (colorDialog3.ShowDialog() == DialogResult.Cancel)
                 return;
-            // установка цвета частиц
             Particle.ColorCh2 = colorDialog3.Color;
             button3.BackColor = colorDialog3.Color;
         }
@@ -168,7 +166,6 @@ namespace _2kursKursovaya
         {
             if (colorDialog4.ShowDialog() == DialogResult.Cancel)
                 return;
-            // установка цвета частиц
             IImpactPoint.ColorP = colorDialog4.Color;
             button4.BackColor = colorDialog4.Color;
         }

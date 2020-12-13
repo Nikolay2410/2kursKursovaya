@@ -27,9 +27,6 @@ namespace _2kursKursovaya
 
         public int ParticlesPerTick = 1; // добавил новое поле
 
-        //public Color ColorFrom = Color.White; // начальный цвет частицы
-        //public Color ColorTo = Color.FromArgb(0, Color.Black); // конечный цвет частиц
-
         public int MousePositionX;
         public int MousePositionY;
 
@@ -89,7 +86,6 @@ namespace _2kursKursovaya
             }
         }
 
-        public int ParticlesCount = 500;
         // добавил новый метод, виртуальным, чтобы переопределять можно было
         public virtual void ResetParticle(Particle particle)
         {
@@ -116,7 +112,6 @@ namespace _2kursKursovaya
 
         public void Render(Graphics g)
         {
-            // не трогаем
             foreach (var particle in particles)
             {
                 particle.Draw(g);
