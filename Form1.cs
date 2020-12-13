@@ -25,9 +25,15 @@ namespace _2kursKursovaya
             picDisplay.Image = new Bitmap(picDisplay.Width, picDisplay.Height);
             tbGraviton2.Value = 100;
 
+            // расширенное окно для выбора цвета
+            colorDialog1.FullOpen = true;
+            // установка начального цвета для colorDialog
+            colorDialog1.Color = this.BackColor;
+            button1.BackColor = Color.Magenta;
+
             this.emitter = new Emitter // создаю эмиттер и привязываю его к полю emitter
             {
-                Direction = 0,
+                Direction = 340s,
                 Spreading = 120,
                 SpeedMin = 10,
                 SpeedMax = 20,
@@ -165,30 +171,24 @@ namespace _2kursKursovaya
             }
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) //частички
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            Particle.ColorCh = Color.Blue;
-            switch (comboBox2.SelectedIndex)
-            {
-                case 0: //красный
-                    Particle.ColorCh = Color.Red;
-                    break;
-                case 1: //синий
-                    Particle.ColorCh = Color.Blue;
-                    break;
-                case 2: //зелёный
-                    Particle.ColorCh = Color.Green;
-                    break;
-                case 3: //фиолетовый
-                    Particle.ColorCh = Color.Purple;
-                    break;
-                case 4: //розовый
-                    Particle.ColorCh = Color.Magenta;
-                    break;
-                case 5: //белый
-                    Particle.ColorCh = Color.White;
-                    break;
-            }
+            //Emitter.ParticlesCount = trackBar1.Value;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            // установка цвета частиц
+            Particle.ColorCh = colorDialog1.Color;
+            button1.BackColor = colorDialog1.Color;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
