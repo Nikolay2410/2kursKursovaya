@@ -93,9 +93,9 @@ namespace _2kursKursovaya
         // добавил новый метод, виртуальным, чтобы переопределять можно было
         public virtual void ResetParticle(Particle particle)
         {
-            var color = particle as ParticleColorful;
-            color.FromColor = Particle.ColorCh;
-            color.ToColor = Particle.ColorCh2;
+            var partColor = particle as ParticleColorful;
+            partColor.FromColor = Particle.ColorCh;
+            partColor.ToColor = Particle.ColorCh2;
 
             particle.Life = Particle.rand.Next(LifeMin, LifeMax);
 

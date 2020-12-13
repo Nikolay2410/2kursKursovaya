@@ -129,8 +129,8 @@ namespace _2kursKursovaya
             double r = Math.Sqrt(gX * gX + gY * gY); // считаем расстояние от центра точки до центра частицы
             if (r + particle.Radius < Gravitation / 2) // если частица оказалось внутри окружности
             {
-                var color = particle as ParticleColorful;
-                color.FromColor = ColorP;
+                var partColor = particle as ParticleColorful;
+                partColor.FromColor = ColorP;
                 count++;
             }
         }
