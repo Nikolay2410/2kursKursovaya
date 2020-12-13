@@ -30,11 +30,13 @@ namespace _2kursKursovaya
             colorDialog1.FullOpen = true;
             colorDialog2.FullOpen = true;
             colorDialog3.FullOpen = true;
+            colorDialog4.FullOpen = true;
             colorDialog2.Color = Color.Red;
             // установка начального цвета для colorDialog
             button1.BackColor = Color.Magenta;
             button2.BackColor = Color.Red;
             button3.BackColor = Color.Black;
+            button4.BackColor = Color.White;
 
             this.emitter = new Emitter // создаю эмиттер и привязываю его к полю emitter
             {
@@ -160,6 +162,15 @@ namespace _2kursKursovaya
         private void tbCount_Scroll(object sender, EventArgs e)
         {
             emitter.ParticlesPerTick = tbCount.Value;
+        }
+
+        private void button4_Click(object sender, EventArgs e) //перекрашивание
+        {
+            if (colorDialog4.ShowDialog() == DialogResult.Cancel)
+                return;
+            // установка цвета частиц
+            IImpactPoint.ColorP = colorDialog4.Color;
+            button4.BackColor = colorDialog4.Color;
         }
     }
 }

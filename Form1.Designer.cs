@@ -46,6 +46,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.colorDialog3 = new System.Windows.Forms.ColorDialog();
             this.tbCount = new System.Windows.Forms.TrackBar();
+            this.button4 = new System.Windows.Forms.Button();
+            this.colorDialog4 = new System.Windows.Forms.ColorDialog();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSize)).BeginInit();
@@ -100,7 +104,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(589, 540);
+            this.label1.Location = new System.Drawing.Point(589, 534);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 23);
             this.label1.TabIndex = 11;
@@ -183,12 +187,44 @@
             this.tbCount.Value = 80;
             this.tbCount.Scroll += new System.EventHandler(this.tbCount_Scroll);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(728, 587);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(42, 38);
+            this.button4.TabIndex = 24;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(559, 593);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(150, 23);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Перекрашивание";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(332, 450);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(127, 23);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Размер частиц";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 671);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.tbCount);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
@@ -232,6 +268,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ColorDialog colorDialog3;
         private System.Windows.Forms.TrackBar tbCount;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ColorDialog colorDialog4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 

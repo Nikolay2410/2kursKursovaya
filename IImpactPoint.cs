@@ -24,6 +24,7 @@ namespace _2kursKursovaya
         public int LifeMax = 100;
 
         public Color ColorS = Color.Red;
+        public static Color ColorP = Color.White;
 
         // абстрактный метод с помощью которого будем изменять состояние частиц
         // например притягивать
@@ -129,7 +130,7 @@ namespace _2kursKursovaya
             if (r + particle.Radius < Gravitation / 2) // если частица оказалось внутри окружности
             {
                 var color = particle as ParticleColorful;
-                color.FromColor = Color.White;
+                color.FromColor = ColorP;
                 count++;
             }
         }
