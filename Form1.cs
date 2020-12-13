@@ -27,13 +27,14 @@ namespace _2kursKursovaya
 
             // расширенное окно для выбора цвета
             colorDialog1.FullOpen = true;
+            colorDialog2.FullOpen = true;
             // установка начального цвета для colorDialog
-            colorDialog1.Color = this.BackColor;
             button1.BackColor = Color.Magenta;
+            button2.BackColor = Color.Red;
 
             this.emitter = new Emitter // создаю эмиттер и привязываю его к полю emitter
             {
-                Direction = 340s,
+                Direction = 340,
                 Spreading = 120,
                 SpeedMin = 10,
                 SpeedMax = 20,
@@ -93,25 +94,7 @@ namespace _2kursKursovaya
             var color = Color.Red;
             if (e.Button == MouseButtons.Left)
             {
-                switch(comboBox1.SelectedIndex)
-                {
-                    case 0: //красный
-                        color = Color.Red;
-                        break;
-                    case 1: //синий
-                        color = Color.Blue;
-                        break;
-                    case 2: //зелёный
-                        color = Color.Green;
-                        break;
-                    case 3: //фиолетовый
-                        color = Color.Purple;
-                        break;
-                }
-                if (comboBox1.SelectedIndex == 1)
-                {
-                    color = Color.Blue;
-                }
+                color =  colorDialog2.Color;
                 point = new GravityPoint
                 {
                     X = e.X,
@@ -133,51 +116,8 @@ namespace _2kursKursovaya
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) //счётчик
-        {
-            if (comboBox1.SelectedIndex == 1)
-            {
-                foreach (var points in emitter.impactPoints)
-                {
-                    points.ColorS = Color.Blue;
-                }
-            }
-            switch (comboBox1.SelectedIndex)
-            {
-                case 0: //красный
-                    foreach (var points in emitter.impactPoints)
-                    {
-                        points.ColorS = Color.Red;
-                    }
-                    break;
-                case 1: //синий
-                    foreach (var points in emitter.impactPoints)
-                    {
-                        points.ColorS = Color.Blue;
-                    }
-                    break;
-                case 2: //зелёный
-                    foreach (var points in emitter.impactPoints)
-                    {
-                        points.ColorS = Color.Green;
-                    }
-                    break;
-                case 3: //фиолетовый
-                    foreach (var points in emitter.impactPoints)
-                    {
-                        points.ColorS = Color.Purple;
-                    }
-                    break;
-            }
-        }
 
-
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
-            //Emitter.ParticlesCount = trackBar1.Value;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //цвет частичек
         {
             if (colorDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
@@ -186,9 +126,17 @@ namespace _2kursKursovaya
             button1.BackColor = colorDialog1.Color;
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //цвет счётчика
         {
+            if (colorDialog2.ShowDialog() == DialogResult.Cancel)
+                return;
+            // установка цвета счётчика
+            button2.BackColor = colorDialog2.Color;
 
+            foreach (var points in emitter.impactPoints)
+            {
+                points.ColorS = colorDialog2.Color;
+            }
         }
     }
 }
