@@ -28,6 +28,7 @@ namespace _2kursKursovaya
             // расширенное окно для выбора цвета
             colorDialog1.FullOpen = true;
             colorDialog2.FullOpen = true;
+            colorDialog2.Color = Color.Red;
             // установка начального цвета для colorDialog
             button1.BackColor = Color.Magenta;
             button2.BackColor = Color.Red;
@@ -91,18 +92,20 @@ namespace _2kursKursovaya
 
         private void picDisplay_MouseClick(object sender, MouseEventArgs e)
         {
-            var color = Color.Red;
             if (e.Button == MouseButtons.Left)
             {
-                color =  colorDialog2.Color;
                 point = new GravityPoint
                 {
                     X = e.X,
                     Y = e.Y,
-                    ColorS = color
+                    ColorS = colorDialog2.Color
                 };
                 emitter.impactPoints.Add(point);
                 point.Gravitation = tbGraviton2.Value;
+                foreach (var points in emitter.impactPoints)
+                {
+                    points.ColorS = colorDialog2.Color;
+                }
             }
             else if (e.Button == MouseButtons.Right)
             {
@@ -137,6 +140,10 @@ namespace _2kursKursovaya
             {
                 points.ColorS = colorDialog2.Color;
             }
+        }
+
+        private void tbSize_Scroll(object sender, EventArgs e)
+        {
         }
     }
 }

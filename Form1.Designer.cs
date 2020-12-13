@@ -41,8 +41,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.colorDialog2 = new System.Windows.Forms.ColorDialog();
+            this.tbSize = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSize)).BeginInit();
             this.SuspendLayout();
             // 
             // picDisplay
@@ -125,12 +127,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // tbSize
+            // 
+            this.tbSize.Location = new System.Drawing.Point(26, 540);
+            this.tbSize.Maximum = 100;
+            this.tbSize.Name = "tbSize";
+            this.tbSize.Size = new System.Drawing.Size(222, 56);
+            this.tbSize.TabIndex = 19;
+            this.tbSize.Scroll += new System.EventHandler(this.tbSize_Scroll);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 634);
+            this.Controls.Add(this.tbSize);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
@@ -143,6 +155,7 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,6 +175,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ColorDialog colorDialog2;
+        private System.Windows.Forms.TrackBar tbSize;
     }
 }
 
