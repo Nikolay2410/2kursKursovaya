@@ -22,6 +22,9 @@ namespace _2kursKursovaya
         public int RadiusMax = 10; // максимальный радиус частицы
         public int LifeMin = 20;
         public int LifeMax = 100;
+
+        public Color ColorS = Color.Red;
+
         // абстрактный метод с помощью которого будем изменять состояние частиц
         // например притягивать
         public abstract void ImpactParticle(Particle particle);
@@ -84,14 +87,14 @@ namespace _2kursKursovaya
         {
             // буду рисовать окружность с диаметром равным Power
             g.FillEllipse(
-                new SolidBrush(Color.FromArgb(c, Color.Red)),
+                new SolidBrush(Color.FromArgb(c, ColorS)),
                 X - Gravitation / 2,
                 Y - Gravitation / 2,
                 Gravitation,
                 Gravitation
             );
             g.DrawEllipse(
-                new Pen(Color.Red),
+                new Pen(Color.White),
                 X - Gravitation / 2,
                 Y - Gravitation / 2,
                 Gravitation,

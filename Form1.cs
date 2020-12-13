@@ -84,13 +84,33 @@ namespace _2kursKursovaya
 
         private void picDisplay_MouseClick(object sender, MouseEventArgs e)
         {
-            
+            var color = Color.Red;
             if (e.Button == MouseButtons.Left)
             {
+                switch(comboBox1.SelectedIndex)
+                {
+                    case 0: //красный
+                        color = Color.Red;
+                        break;
+                    case 1: //синий
+                        color = Color.Blue;
+                        break;
+                    case 2: //зелёный
+                        color = Color.Green;
+                        break;
+                    case 3: //фиолетовый
+                        color = Color.Purple;
+                        break;
+                }
+                if (comboBox1.SelectedIndex == 1)
+                {
+                    color = Color.Blue;
+                }
                 point = new GravityPoint
                 {
                     X = e.X,
                     Y = e.Y,
+                    ColorS = color
                 };
                 emitter.impactPoints.Add(point);
                 point.Gravitation = tbGraviton2.Value;
@@ -104,6 +124,44 @@ namespace _2kursKursovaya
                 };
                 if (emitter.impactPoints.Count > 1) { emitter.impactPoints.RemoveAt(emitter.impactPoints.Count - 1); }
                 
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 1)
+            {
+                foreach (var points in emitter.impactPoints)
+                {
+                    points.ColorS = Color.Blue;
+                }
+            }
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0: //красный
+                    foreach (var points in emitter.impactPoints)
+                    {
+                        points.ColorS = Color.Red;
+                    }
+                    break;
+                case 1: //синий
+                    foreach (var points in emitter.impactPoints)
+                    {
+                        points.ColorS = Color.Blue;
+                    }
+                    break;
+                case 2: //зелёный
+                    foreach (var points in emitter.impactPoints)
+                    {
+                        points.ColorS = Color.Green;
+                    }
+                    break;
+                case 3: //фиолетовый
+                    foreach (var points in emitter.impactPoints)
+                    {
+                        points.ColorS = Color.Purple;
+                    }
+                    break;
             }
         }
     }
