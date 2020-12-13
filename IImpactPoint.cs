@@ -69,7 +69,7 @@ namespace _2kursKursovaya
             float gY = Y - particle.Y;
 
             double r = Math.Sqrt(gX * gX + gY * gY); // считаем расстояние от центра точки до центра частицы
-            if (r + particle.Radius < Power / 2) // если частица оказалось внутри окружности
+            if (r + particle.Radius < Gravitation / 2) // если частица оказалось внутри окружности
             {
                 count++;
                 if (c < 255)
@@ -85,15 +85,15 @@ namespace _2kursKursovaya
             // буду рисовать окружность с диаметром равным Power
             g.FillEllipse(
                 new SolidBrush(Color.FromArgb(c, Color.Red)),
-                X - Power / 2,
-                Y - Power / 2,
+                X - Gravitation / 2,
+                Y - Gravitation / 2,
                 Gravitation,
                 Gravitation
             );
             g.DrawEllipse(
                 new Pen(Color.Red),
-                X - Power / 2,
-                Y - Power / 2,
+                X - Gravitation / 2,
+                Y - Gravitation / 2,
                 Gravitation,
                 Gravitation
             );
