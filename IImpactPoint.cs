@@ -72,7 +72,7 @@ namespace _2kursKursovaya
             if (r + particle.Radius < Gravitation / 2) // если частица оказалось внутри окружности
             {
                 count++;
-                if (c < 255)
+                if (c < 255 && count % 4 == 0)
                 {
                     c++;
                 }
