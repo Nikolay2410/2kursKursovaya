@@ -12,14 +12,15 @@ namespace _2kursKursovaya
         List<Particle> particles = new List<Particle>();
         public List<IImpactPoint> impactPoints = new List<IImpactPoint>();
 
+        public static int Rad = 1;
         public int X; // координата X центра эмиттера, будем ее использовать вместо MousePositionX
         public int Y; // соответствующая координата Y 
         public int Direction = 90; // вектор направления в градусах куда сыпет эмиттер
         public int Spreading = 120; // разброс частиц относительно Direction
         public int SpeedMin = 1; // начальная минимальная скорость движения частицы
         public int SpeedMax = 10; // начальная максимальная скорость движения частицы
-        public int RadiusMin = 2; // минимальный радиус частицы
-        public int RadiusMax = 10; // максимальный радиус частицы
+        public int RadiusMin = 2 + Rad; // минимальный радиус частицы
+        public int RadiusMax = 10 + Rad; // максимальный радиус частицы
         public int LifeMin = 20;
         public int LifeMax = 100;
 
@@ -101,7 +102,7 @@ namespace _2kursKursovaya
             particle.SpeedX = (float)(Math.Cos(direction / 180 * Math.PI) * speed);
             particle.SpeedY = -(float)(Math.Sin(direction / 180 * Math.PI) * speed);
 
-            particle.Radius = Particle.rand.Next(RadiusMin, RadiusMax);
+            particle.Radius = Particle.rand.Next(RadiusMin+ Rad, RadiusMax + Rad);
         }
 
         public void Render(Graphics g)

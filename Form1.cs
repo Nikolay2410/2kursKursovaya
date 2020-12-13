@@ -144,6 +144,7 @@ namespace _2kursKursovaya
 
         private void tbSize_Scroll(object sender, EventArgs e)
         {
+            Emitter.Rad = tbSize.Value;
         }
     }
 }
