@@ -116,19 +116,47 @@ namespace _2kursKursovaya
         }
     }
 
-    public class AntiGravityPoint : IImpactPoint
+    public class GravityPointMouse : IImpactPoint
     {
-        public int Power = 100; // сила отторжения
-
-        // а сюда по сути скопировали с минимальными правками то что было в UpdateState
+        public int Power = 100; // сила притяжения
+        int count = 0; // количество точек
         public override void ImpactParticle(Particle particle)
         {
             float gX = X - particle.X;
             float gY = Y - particle.Y;
-            float r2 = (float)Math.Max(100, gX * gX + gY * gY);
 
-            particle.SpeedX -= gX * Power / r2; // тут минусики вместо плюсов
-            particle.SpeedY -= gY * Power / r2; // и тут
+            double r = Math.Sqrt(gX * gX + gY * gY); // считаем расстояние от центра точки до центра частицы
+            if (r + particle.Radius < Gravitation / 2) // если частица оказалось внутри окружности
+            {
+                var color = particle as ParticleColorful;
+                color.FromColor = Color.White;
+                count++;
+            }
+        }
+        public int Gravitation = 100;
+        public override void Render(Graphics g)
+        {
+            // буду рисовать окружность с диаметром равным Power
+            g.DrawEllipse(
+                new Pen(Color.White),
+                X - Gravitation / 2,
+                Y - Gravitation / 2,
+                Gravitation,
+                Gravitation
+            );
+
+            var stringFormat = new StringFormat(); // создаем экземпляр класса
+            stringFormat.Alignment = StringAlignment.Center; // выравнивание по горизонтали
+            stringFormat.LineAlignment = StringAlignment.Center; // выравнивание по вертикали
+
+            g.DrawString(
+                $"{count}",
+                new Font("Verdana", 10),
+                new SolidBrush(Color.White),
+                X,
+                Y,
+                stringFormat // передаем инфу о выравнивании
+            );
         }
     }
 

@@ -45,9 +45,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.colorDialog3 = new System.Windows.Forms.ColorDialog();
+            this.tbCount = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCount)).BeginInit();
             this.SuspendLayout();
             // 
             // picDisplay
@@ -98,7 +100,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(603, 540);
+            this.label1.Location = new System.Drawing.Point(589, 540);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 23);
             this.label1.TabIndex = 11;
@@ -125,7 +127,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(729, 540);
+            this.button2.Location = new System.Drawing.Point(728, 534);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(42, 38);
             this.button2.TabIndex = 18;
@@ -170,12 +172,24 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // tbCount
+            // 
+            this.tbCount.Location = new System.Drawing.Point(296, 478);
+            this.tbCount.Maximum = 80;
+            this.tbCount.Minimum = 20;
+            this.tbCount.Name = "tbCount";
+            this.tbCount.Size = new System.Drawing.Size(195, 56);
+            this.tbCount.TabIndex = 23;
+            this.tbCount.Value = 80;
+            this.tbCount.Scroll += new System.EventHandler(this.tbCount_Scroll);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 634);
+            this.ClientSize = new System.Drawing.Size(800, 671);
+            this.Controls.Add(this.tbCount);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -193,6 +207,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDisplay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraviton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,6 +231,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ColorDialog colorDialog3;
+        private System.Windows.Forms.TrackBar tbCount;
     }
 }
 

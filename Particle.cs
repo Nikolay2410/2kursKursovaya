@@ -54,8 +54,8 @@ namespace _2kursKursovaya
     public class ParticleColorful : Particle
     {
         // два новых поля под цвет начальный и конечный
-        public Color FromColor;
-        public Color ToColor;
+        public Color FromColor = Color.Red;
+        public Color ToColor = Color.FromArgb(0,Color.Black);
 
         // для смеси цветов
         public static Color MixColor(Color color1, Color color2, float k)
@@ -74,7 +74,7 @@ namespace _2kursKursovaya
             float k = Math.Min(1f, Life / 100);
 
             // так как k уменьшается от 1 до 0, то порядок цветов обратный
-            var color = MixColor(ColorCh2, ColorCh, k);
+            var color = MixColor(ToColor, FromColor, k);
             var b = new SolidBrush(color);
 
             g.FillEllipse(b, X - Radius, Y - Radius, Radius * 2, Radius * 2);

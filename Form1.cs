@@ -15,7 +15,7 @@ namespace _2kursKursovaya
         List<Emitter> emitters = new List<Emitter>();
         Emitter emitter;
 
-        GravityPoint point2; // добавил поле под вторую точку
+        GravityPointMouse point2; // добавил поле под вторую точку
         GravityPoint point;
 
         public Form1()
@@ -24,6 +24,7 @@ namespace _2kursKursovaya
             
             picDisplay.Image = new Bitmap(picDisplay.Width, picDisplay.Height);
             tbGraviton2.Value = 100;
+            tbCount.Value = 20;
 
             // расширенное окно для выбора цвета
             colorDialog1.FullOpen = true;
@@ -41,21 +42,19 @@ namespace _2kursKursovaya
                 Spreading = 120,
                 SpeedMin = 10,
                 SpeedMax = 20,
-                ColorFrom = Color.Gold,
-                ColorTo = Color.FromArgb(0, Color.Red),
-                ParticlesPerTick = 10,
+                ParticlesPerTick = 20,
                 X = 0,
                 Y = 0,
             };
             emitters.Add(this.emitter); // все равно добавляю в список emitters, чтобы он рендерился и обновлялся
-            point2 = new GravityPoint
+            point2 = new GravityPointMouse
             {
                 X = picDisplay.Width / 2 - 100,
                 Y = picDisplay.Height / 2,
             };
 
             // привязываем поля к эмиттеру
-            emitter.impactPoints.Add(point2);
+            emitter.impactPointsMouse.Add(point2);
 
         }
 
@@ -116,7 +115,7 @@ namespace _2kursKursovaya
                     X = e.X,
                     Y = e.Y,
                 };
-                if (emitter.impactPoints.Count > 1) { emitter.impactPoints.RemoveAt(emitter.impactPoints.Count - 1); }
+                if (emitter.impactPoints.Count > 0) { emitter.impactPoints.RemoveAt(emitter.impactPoints.Count - 1); }
                 
             }
         }
@@ -149,13 +148,18 @@ namespace _2kursKursovaya
             Emitter.Rad = tbSize.Value;
         }
 
-        private void button3_Click(object sender, EventArgs e) //цвет частичек в
+        private void button3_Click(object sender, EventArgs e) //цвет частичек в*
         {
             if (colorDialog3.ShowDialog() == DialogResult.Cancel)
                 return;
             // установка цвета частиц
             Particle.ColorCh2 = colorDialog3.Color;
             button3.BackColor = colorDialog3.Color;
+        }
+
+        private void tbCount_Scroll(object sender, EventArgs e)
+        {
+            emitter.ParticlesPerTick = tbCount.Value;
         }
     }
 }

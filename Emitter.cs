@@ -11,6 +11,7 @@ namespace _2kursKursovaya
     {
         List<Particle> particles = new List<Particle>();
         public List<IImpactPoint> impactPoints = new List<IImpactPoint>();
+        public List<IImpactPoint> impactPointsMouse = new List<IImpactPoint>();
 
         public static int Rad = 1;
         public int X; // координата X центра эмиттера, будем ее использовать вместо MousePositionX
@@ -26,8 +27,8 @@ namespace _2kursKursovaya
 
         public int ParticlesPerTick = 1; // добавил новое поле
 
-        public Color ColorFrom = Color.White; // начальный цвет частицы
-        public Color ColorTo = Color.FromArgb(0, Color.Black); // конечный цвет частиц
+        //public Color ColorFrom = Color.White; // начальный цвет частицы
+        //public Color ColorTo = Color.FromArgb(0, Color.Black); // конечный цвет частиц
 
         public int MousePositionX;
         public int MousePositionY;
@@ -38,8 +39,8 @@ namespace _2kursKursovaya
         public virtual Particle CreateParticle()
         {
             var particle = new ParticleColorful();
-            particle.FromColor = ColorFrom;
-            particle.ToColor = ColorTo;
+            particle.FromColor = Particle.ColorCh;
+            particle.ToColor = Particle.ColorCh2;
 
             return particle;
         }
@@ -69,6 +70,10 @@ namespace _2kursKursovaya
                     {
                         point.ImpactParticle(particle);
                     }
+                    foreach (var point in impactPointsMouse)
+                    {
+                        point.ImpactParticle(particle);
+                    }
 
                     particle.SpeedX += GravitationX;
                     particle.SpeedY += GravitationY;
@@ -88,6 +93,10 @@ namespace _2kursKursovaya
         // добавил новый метод, виртуальным, чтобы переопределять можно было
         public virtual void ResetParticle(Particle particle)
         {
+            var color = particle as ParticleColorful;
+            color.FromColor = Particle.ColorCh;
+            color.ToColor = Particle.ColorCh2;
+
             particle.Life = Particle.rand.Next(LifeMin, LifeMax);
 
             particle.X = X;
@@ -114,6 +123,10 @@ namespace _2kursKursovaya
             }
 
             foreach (var point in impactPoints)
+            {
+                point.Render(g); // это добавили
+            }
+            foreach (var point in impactPointsMouse)
             {
                 point.Render(g); // это добавили
             }
