@@ -114,7 +114,10 @@ namespace _2kursKursovaya
             }
             else if (e.Button == MouseButtons.Right)
             {
-                if (emitter.impactPoints.Count > 0) { emitter.impactPoints.RemoveAt(emitter.impactPoints.Count - 1); }
+                if (emitter.impactPoints.Count > 0)
+                { 
+                    emitter.impactPoints.RemoveAt(emitter.impactPoints.Count - 1);
+                }
             }
         }
 

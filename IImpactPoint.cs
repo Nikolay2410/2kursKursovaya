@@ -46,7 +46,7 @@ namespace _2kursKursovaya
     public class GravityPoint : IImpactPoint
     {
         int count = 0; // количество точек
-        int c = 0;
+        int Opacity = 0;
         public override void ImpactParticle(Particle particle)
         {
             float gX = X - particle.X;
@@ -56,9 +56,9 @@ namespace _2kursKursovaya
             if (r + particle.Radius < Gravitation / 2) // если частица оказалось внутри окружности
             {
                 count++;
-                if (c < 255 && count % 3 == 0)
+                if (Opacity < 255 && count % 3 == 0)
                 {
-                    c++;
+                    Opacity++;
                 }
                 particle.Life = 0;
             }
@@ -68,7 +68,7 @@ namespace _2kursKursovaya
         {
             // буду рисовать окружность с диаметром равным Power
             g.FillEllipse(
-                new SolidBrush(Color.FromArgb(c, ColorS)),
+                new SolidBrush(Color.FromArgb(Opacity, ColorS)),
                 X - Gravitation / 2,
                 Y - Gravitation / 2,
                 Gravitation,
