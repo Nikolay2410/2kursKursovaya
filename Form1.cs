@@ -90,6 +90,7 @@ namespace _2kursKursovaya
         private void tbGraviton2_Scroll(object sender, EventArgs e)
         {
             point2.Gravitation = tbGraviton2.Value;
+            label8.Text = Convert.ToString(tbGraviton2.Value);
         }
 
         private void picDisplay_MouseClick(object sender, MouseEventArgs e)
@@ -147,6 +148,7 @@ namespace _2kursKursovaya
         private void tbSize_Scroll(object sender, EventArgs e)
         {
             Emitter.Rad = tbSize.Value;
+            label9.Text = Convert.ToString(tbSize.Value);
         }
 
         private void button3_Click(object sender, EventArgs e) //цвет частичек
@@ -160,6 +162,7 @@ namespace _2kursKursovaya
         private void tbCount_Scroll(object sender, EventArgs e)
         {
             emitter.ParticlesPerTick = tbCount.Value;
+            label10.Text = Convert.ToString(tbCount.Value);
         }
 
         private void button4_Click(object sender, EventArgs e) //перекрашивание
