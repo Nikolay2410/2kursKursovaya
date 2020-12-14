@@ -114,13 +114,7 @@ namespace _2kursKursovaya
             }
             else if (e.Button == MouseButtons.Right)
             {
-                point = new GravityPoint
-                {
-                    X = e.X,
-                    Y = e.Y,
-                };
                 if (emitter.impactPoints.Count > 0) { emitter.impactPoints.RemoveAt(emitter.impactPoints.Count - 1); }
-                
             }
         }
 

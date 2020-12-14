@@ -41,25 +41,6 @@ namespace _2kursKursovaya
                     10
                 );
         }
-
-        public virtual void ResetParticle(Particle particle)
-        {
-            particle.Life = Particle.rand.Next(LifeMin, LifeMax);
-
-            particle.X = X1;
-            particle.Y = Y1;
-
-            var direction = Direction
-                + (double)Particle.rand.Next(Spreading)
-                - Spreading / 2;
-
-            var speed = Particle.rand.Next(SpeedMin, SpeedMax);
-
-            particle.SpeedX = (float)(Math.Cos(direction / 180 * Math.PI) * speed);
-            particle.SpeedY = -(float)(Math.Sin(direction / 180 * Math.PI) * speed);
-
-            particle.Radius = Particle.rand.Next(RadiusMin, RadiusMax);
-        }
     }
 
     public class GravityPoint : IImpactPoint
@@ -79,7 +60,7 @@ namespace _2kursKursovaya
                 {
                     c++;
                 }
-                ResetParticle(particle);
+                particle.Life = 0;
             }
         }
         public int Gravitation = 100;
