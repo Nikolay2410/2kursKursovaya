@@ -24,7 +24,7 @@ namespace _2kursKursovaya
         public int LifeMax = 100;
 
         public Color ColorS = Color.Red;
-        public static Color ColorP = Color.White;
+        public Color ColorP = Color.White;
 
         // абстрактный метод с помощью которого будем изменять состояние частиц
         // например притягивать

@@ -9,8 +9,11 @@ namespace _2kursKursovaya
 {
     public class Particle
     {
-        public static Color ColorCh = Color.Magenta;
-        public static Color ColorCh2 = Color.Black;
+        //public static Color ColorCh = Color.Magenta;
+        //public static Color ColorCh2 = Color.Black;
+
+        public Color ColorFrom = Color.Magenta;
+        public Color ColorTo = Color.Black;
 
         public int Radius; // радиус частицы
         public float X; // X координата положения частицы в пространстве

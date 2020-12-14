@@ -45,6 +45,8 @@ namespace _2kursKursovaya
                 SpeedMin = 10,
                 SpeedMax = 20,
                 ParticlesPerTick = 20,
+                ColorFrom = Color.Magenta,
+                ColorTo = Color.Black,
                 X = 0,
                 Y = 0,
             };
@@ -128,7 +130,8 @@ namespace _2kursKursovaya
             if (colorDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             // установка цвета частиц
-            Particle.ColorCh = colorDialog1.Color;
+            emitter.ColorFrom = colorDialog1.Color;
+            //Particle.ColorCh = colorDialog1.Color;
             button1.BackColor = colorDialog1.Color;
         }
 
@@ -155,7 +158,8 @@ namespace _2kursKursovaya
         {
             if (colorDialog3.ShowDialog() == DialogResult.Cancel)
                 return;
-            Particle.ColorCh2 = colorDialog3.Color;
+            //Particle.ColorCh2 = colorDialog3.Color;
+            emitter.ColorTo = colorDialog3.Color;
             button3.BackColor = colorDialog3.Color;
         }
 
@@ -169,7 +173,11 @@ namespace _2kursKursovaya
         {
             if (colorDialog4.ShowDialog() == DialogResult.Cancel)
                 return;
-            IImpactPoint.ColorP = colorDialog4.Color;
+            //IImpactPoint.ColorP = colorDialog4.Color;
+            foreach (var ColorP in emitter.impactPointsMouse)
+            {
+                ColorP.ColorP = colorDialog4.Color;
+            }
             button4.BackColor = colorDialog4.Color;
         }
     }

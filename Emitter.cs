@@ -24,6 +24,8 @@ namespace _2kursKursovaya
         public int RadiusMax = 10 + Rad; // максимальный радиус частицы
         public int LifeMin = 20;
         public int LifeMax = 100;
+        public Color ColorFrom = Color.Magenta;
+        public Color ColorTo = Color.Black;
 
         public int ParticlesPerTick = 1; // добавил новое поле
 
@@ -36,8 +38,8 @@ namespace _2kursKursovaya
         public virtual Particle CreateParticle()
         {
             var particle = new ParticleColorful();
-            particle.FromColor = Particle.ColorCh;
-            particle.ToColor = Particle.ColorCh2;
+            particle.FromColor = ColorFrom;
+            particle.ToColor = ColorTo;
 
             return particle;
         }
@@ -90,8 +92,8 @@ namespace _2kursKursovaya
         public virtual void ResetParticle(Particle particle)
         {
             var partColor = particle as ParticleColorful;
-            partColor.FromColor = Particle.ColorCh;
-            partColor.ToColor = Particle.ColorCh2;
+            partColor.FromColor = ColorFrom;
+            partColor.ToColor = ColorTo;
 
             particle.Life = Particle.rand.Next(LifeMin, LifeMax);
 
